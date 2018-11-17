@@ -2,6 +2,8 @@
 
 An implementation of the Eulerian video magnification computer vision algorithm initially developed by MIT CSAIL. This program uses the method for the application of remotely detecting an individual's heart rate in beats per minute from a still video of his/her face.
 
+Built with OpenCV, NumPy, and SciPy in Python 3
+
 ## Program organization:
 The main.py file contains the main program that utilizes all of the other modules defined in the other code files
 to read in the input video, run Eulerian magnification on it, and to display the results. The purposes of the other
