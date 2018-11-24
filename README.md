@@ -19,3 +19,5 @@ heartrate.py - Contains function to calculate heart rate from FFT results
 To run the program, specify the path to the input video in the preprocessing.read_video() function on line 13 of
 main.py. To alter the frequency range to be filtered, change the values assigned to freq_min and freq_max on lines 8
 and 9.
+
+Note: Output video is a work in progress.
