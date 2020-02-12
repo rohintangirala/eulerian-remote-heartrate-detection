@@ -40,7 +40,7 @@ def build_video_pyramid(frames):
         pyramid = build_laplacian_pyramid(frame, 3)
         for j in range(3):
             if i == 0:
-                lap_video.append(np.zeros((frames[0].shape[0], pyramid[j].shape[0], pyramid[j].shape[1], 3)))
+                lap_video.append(np.zeros((len(frames), pyramid[j].shape[0], pyramid[j].shape[1], 3)))
             lap_video[j][i] = pyramid[j]
 
     return lap_video
