@@ -3,14 +3,23 @@ import pyramids
 import heartrate
 import preprocessing
 import eulerian
+import capture_frames
 
 # Frequency range for Fast-Fourier Transform
 freq_min = 1
 freq_max = 1.8
-
-# Preprocessing phase
+ml_model = True
+# Preprocess phase
 print("Reading + preprocessing video...")
-video_frames, frame_ct, fps = preprocessing.read_video("videos/rohin_active.mov")
+
+# video_frames, frame_ct, fps = preprocessing.read_video("videos/rohin_active.mov")
+# video_frames, frame_ct, fps = preprocessing.read_video("../../untitle.mov")
+
+if ml_model is True:
+    capture_frames = capture_frames.CaptureFrames()
+    video_frames, frame_ct, fps = capture_frames("videos/rohin_active.mov")
+else:
+    video_frames, frame_ct, fps = preprocessing.read_video("videos/rohin_active.mov")
 
 # Build Laplacian video pyramid
 print("Building Laplacian video pyramid...")
@@ -19,7 +28,7 @@ lap_video = pyramids.build_video_pyramid(video_frames)
 amplified_video_pyramid = []
 
 for i, video in enumerate(lap_video):
-    if i == 0 or i == len(lap_video)-1:
+    if i <= 2 or i >= len(lap_video)-3:
         continue
 
     # Eulerian magnification with temporal FFT filtering
