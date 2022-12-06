@@ -1,6 +1,6 @@
 # Remote Heart Rate Detection through Eulerian Magnification of Face Videos
 
-An implementation of the Eulerian video magnification computer vision algorithm initially developed by MIT CSAIL. This program uses the method for the application of remotely detecting an individual's heart rate in beats per minute from a still video of his/her face.
+An implementation of the Eulerian video magnification computer vision algorithm initially developed by MIT CSAIL. This program uses the method for the application of remotely detecting an individual's heart rate in beats per minute from a still video of their face.
 
 Built with OpenCV, NumPy, and SciPy in Python 3
 
